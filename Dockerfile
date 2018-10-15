@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN cd /tmp/ && \
   apt-get update && \
-  apt-get install -y wget && \
+  apt-get install -y wget ssh && \
   wget http://apt.puppet.com/puppet6-release-bionic.deb && \
   dpkg -i puppet6-release-bionic.deb && \
   apt-get update && \
