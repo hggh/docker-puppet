@@ -6,6 +6,11 @@ RUN cd /tmp/ && \
   wget http://apt.puppet.com/puppet6-release-bionic.deb && \
   dpkg -i puppet6-release-bionic.deb && \
   apt-get update && \
-  apt-get install -y puppet-agent && \
-  apt-get install -y pdk && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y puppet-agent \
+    pdk \
+    ansible \
+    python-boto3 \
+    python-boto \
+    python3-pip && \
+  pip3 install pypuppetdb && \
   apt-get clean
